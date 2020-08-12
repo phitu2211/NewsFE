@@ -1,0 +1,47 @@
+﻿@model PostDetails
+@using NewsFE.Extensions
+ 
+@{
+    ViewData["Title"] = Model.post.title;
+}
+
+
+<section id="contentSection">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="left_content">
+                <div class="single_page">
+                    <h1 id="title-news">@Model.post.title</h1>
+                    <div class="single_page_content" id="single_page_content">
+                        @Html.Raw(Model.post.content)
+                    </div>
+                    <div class="related_post">
+                        <h2>
+                            Tin tức liên quan
+                        </h2>
+                        <ul class="spost_nav wow fadeInDown animated" id="lien-quan">
+                            @for (int i = 0; i < 3; i++)
+                            {
+                                String href = "/post/" + Model.relatedPost[i].title.NonUnicode().FriendlyUrl() + "-id=" + Model.relatedPost[i].id;
+                                <li>
+                                    <div class="media">
+                                        <a class="media-left" href="@href">
+                                            <img src="@Model.relatedPost[i].urlImage" alt="" />
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="catg_title" href="@href">
+                                                @Model.relatedPost[i].title
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @await Component.InvokeAsync("RightContentComponent")
+    </div>
+</section>
+

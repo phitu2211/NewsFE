@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/li-scroller.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous" />
+</head>
+<body>
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+    <div class="container">
+        <header id="header">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="header_top">
+                        <div class="header_top_left">
+                            <ul class="top_nav">
+                                <li><a href="/">Trang Chủ</a></li>
+                                <li><a href="#">Thông tin</a></li>
+                                <li><a href="#">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                        <div class="header_top_right"></div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="header_bottom">
+                        <div class="logo_area">
+                            <a href="/" class="logo">
+                                Tin tức 24h
+                            </a>
+                        </div>
+                        <div class="add_banner"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="navArea">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button"
+                            class="navbar-toggle collapsed"
+                            data-toggle="collapse"
+                            data-target="#navbar"
+                            aria-expanded="false"
+                            aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav main_nav">
+                        <li><a href="">Công nghệ</a></li>
+                        <li class="dropdown">
+                            <a href="/category/the-gioi"
+                               class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button"
+                               aria-expanded="false">
+                                Thế giới
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/category/my">Mỹ</a></li>
+                                <li><a href="/category/viet-nam">Việt Nam</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Thời trang</a></li>
+                        <li class="dropdown">
+                            <a href="/category/the-thao"
+                               class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button"
+                               aria-expanded="false">
+                                Thể thao
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/category/bong-da">Bóng đá</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Cuộc sống</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+
+        <footer id="footer">
+            <div class="footer_top">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="footer_widget wow fadeInLeftBig">
+                            <h2>Linh tinh</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="footer_widget wow fadeInDown">
+                            <h2>Thẻ</h2>
+                            <ul class="tag_nav">
+                                <li><a href="#">Thể thao</a></li>
+                                <li><a href="#">Thời trang</a></li>
+                                <li><a href="#">Kinh tế</a></li>
+                                <li><a href="#">Cuộc sống</a></li>
+                                <li><a href="#">Công nghệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="footer_widget wow fadeInRightBig">
+                            <h2>Liên lạc</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet,
+                                consectetur adipisicing elit.
+                            </p>
+                            <address>
+                                Hà Nội
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <p class="copyright">
+                    Copyright &copy; 2045
+                    <a href="#">Tin tức 24h</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/jquery.li-scroller.1.0.js"></script>
+    <script src="~/js/jquery.newsTicker.min.js"></script>
+    <script src="~/js/jquery.fancybox.pack.js"></script>
+    <script src="~/js/custom.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

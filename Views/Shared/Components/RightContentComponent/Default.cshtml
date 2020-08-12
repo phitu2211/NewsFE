@@ -1,0 +1,54 @@
+﻿@model Response<List<Post>>
+@using NewsFE.Extensions
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <aside class="right_content">
+        <div class="single_sidebar">
+            <h2><span>Tin phổ biến</span></h2>
+            <ul class="spost_nav" id="popular-news">
+                @for (int i = 0; i < 5; i++)
+                {
+                    String href = "/post/" + Model.data[i].title.NonUnicode().FriendlyUrl() + "-id=" + Model.data[i].id;
+                    <li>
+                        <div class="media wow fadeInDown">
+                            <a href="@href" class="media-left">
+                                <img alt="" src="@Model.data[i].urlImage" />
+                            </a>
+                            <div class="media-body">
+                                <a href="@href" class="catg_title">
+                                    @Model.data[i].title
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="single_sidebar">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#category" aria-controls="home" role="tab" data-toggle="tab">
+                        Danh mục
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#video" aria-controls="profile" role="tab" data-toggle="tab">Video</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="category">
+                    <ul>
+                        <li class="cat-item"><a href="#">Thể thao</a></li>
+                        <li class="cat-item"><a href="#">Thời trang</a></li>
+                        <li class="cat-item"><a href="#">Công nghệ</a></li>
+                        <li class="cat-item"><a href="#">Kinh doanh</a></li>
+                        <li class="cat-item"><a href="#">Cuộc sống</a></li>
+                    </ul>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="video">
+                    <div class="vide_area"></div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div> 
